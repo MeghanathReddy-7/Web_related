@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE note[
+<!ELEMENT note (to,from,subject,body)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT subject (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+]>
+<note>
+	<from>Meghanath</from>
+	<to>ALARM</to>
+	<heading>Remainder</heading>
+	<body>WAKE AT 6AM</body>
+</note>

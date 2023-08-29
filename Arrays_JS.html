@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays Methods</title>
+    <script>
+        function func() 
+        {
+            const fruits = ["Banana", "Orange", "Apple", "Mango"];
+            let text = "";
+            text += fruits.toString();
+            text += "<br>" + fruits.join(" * ");
+            text += "<br> pop() : " + fruits.pop();
+            text += "<br> push : " + fruits.push("guava") +" " + fruits.toString();
+            text += "<br> shift :" + fruits.shift();
+            text += "<br> unshift : " + fruits.unshift("strawberry") + " " + fruits.toString();
+            text += "<br> splice : " + fruits.splice(2, 0, "Lemon", "Kiwi")  + fruits.toString(); 
+            text += "<br> splice to delete elements : "+ fruits.splice(0, 1) +   " " + fruits.toString();
+            document.getElementById("demo").innerHTML = text;
+        }
+   </script>
+</head>
+<body>
+    <h1>This is a demostration of javascript Array Methods</h1>
+    <button onclick="func()">start</button>
+    <p id="demo"></p>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even Or Odd</title>
+    <script>
+        function evenOrOdd(n){
+            if(n%2 == 0) return `${n} is a even number`;
+            else return `${n} is odd number`;
+        }
+        function check(){
+            let n = document.getElementById("num").value;
+            document.getElementById("demo").innerHTML = evenOrOdd(n);
+        }
+    </script>
+</head>
+<body>
+    <h1>to check even or odd </h1>
+    <label for="">Enter a number :</label>
+    <input  id = "num" type="number" placeholder="0">
+    <button onclick="check()">check</button>
+    <p id = "demo"> </p>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Input Collection</title>
+    <style>
+        body{
+            background-color: rgb(255, 129, 90);
+        }
+      #output {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Input</h1>
+
+    <form id="myForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" /><br /><br />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" /><br /><br />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" /><br /><br />
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" /><br /><br />
+
+      <label for="message">Message:</label><br />
+      <textarea id="message" name="message"></textarea><br /><br />
+
+      <label>Gender:</label>
+      <input type="radio" id="male" name="gender" value="male" />
+      <label for="male">Male</label>
+      <input type="radio" id="female" name="gender" value="female" />
+      <label for="female">Female</label><br /><br />
+
+      <label>Hobbies:</label><br />
+      <input type="checkbox" id="hobby1" name="hobbies" value="reading" />
+      <label for="hobby1">Reading</label><br />
+      <input type="checkbox" id="hobby2" name="hobbies" value="traveling" />
+      <label for="hobby2">Traveling</label><br />
+      <input type="checkbox" id="hobby3" name="hobbies" value="sports" />
+      <label for="hobby3">Sports</label><br /><br />
+
+      <label for="file">Upload File:</label>
+      <input type="file" id="file" name="file" /><br /><br />
+
+      <input type="button" value="Submit" onclick="collectData()" />
+    </form>
+
+    <div id="output"></div>
+
+    <script>
+      function collectData() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        var age = document.getElementById("age").value;
+        var message = document.getElementById("message").value;
+        var gender = document.querySelector(
+          'input[name="gender"]:checked'
+        ).value;
+
+        var hobbies = [];
+        var checkboxes = document.querySelectorAll(
+          'input[name="hobbies"]:checked'
+        );
+        checkboxes.forEach(function (checkbox) {
+          hobbies.push(checkbox.value);
+        });
+
+        var file = document.getElementById("file").value;
+
+        var output = document.getElementById("output");
+        output.innerHTML ="<h2>Collected Data:</h2>" +"<p><strong>Name:</strong> " +name +"</p>" +"<p><strong>Email:</strong> " +email +"</p>" + "<p><strong>Password:</strong> " +password +"</p>" +"<p><strong>Age:</strong> " +age +"</p>" +"<p><strong>Message:</strong> " +message +"</p>" +"<p><strong>Gender:</strong> " +gender +"</p>" +"<p><strong>Hobbies:</strong> " +hobbies.join(", ") +"</p>" +"<p><strong>File:</strong> " +file +"</p>";
+      }
+    </script>
+  </body>
+</html>

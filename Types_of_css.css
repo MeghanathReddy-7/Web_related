@@ -1,0 +1,6 @@
+table,tr,td{
+    border: 2px solid black;
+}
+#third_row{
+    background-color: rgb(1, 204, 18);height:100px;width:1000px;text-align:center
+}
